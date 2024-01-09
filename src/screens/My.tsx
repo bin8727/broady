@@ -5,8 +5,10 @@ import color from "../../styles/color";
 import { heading } from "../../styles/typography";
 
 import Button from "../components/Button";
+import { useAppNavigation } from "../../hooks/navigation";
 
 const My = () => {
+  const { navigate } = useAppNavigation();
   return (
     <View style={s.container}>
       <View style={{ marginTop: 32, paddingHorizontal: 20 }}>
@@ -15,6 +17,8 @@ const My = () => {
           type={"primary"}
           label="첫 화면으로 나가기"
           background={color.primary}
+          onPress={() => navigate("Home")}
+          textColor={color.white}
         />
       </View>
 

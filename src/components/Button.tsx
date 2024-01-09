@@ -8,11 +8,19 @@ type ButtonType = {
   size: "small" | "normal" | "large";
   type: "primary" | "secondary" | "disabled" | "state";
   background?: string;
+  textColor?: string;
   label: string;
   onPress?: () => void;
 };
 
-const Button = ({ size, type, background, label, onPress }: ButtonType) => {
+const Button = ({
+  size,
+  type,
+  background,
+  textColor,
+  label,
+  onPress,
+}: ButtonType) => {
   let buttonSize;
   let buttonType;
 
@@ -52,9 +60,7 @@ const Button = ({ size, type, background, label, onPress }: ButtonType) => {
         { backgroundColor: background },
       ]}
     >
-      <Text style={[body("medium").large, { color: color.white }]}>
-        {label}
-      </Text>
+      <Text style={[body("medium").large, { color: textColor }]}>{label}</Text>
     </TouchableOpacity>
   );
 };
