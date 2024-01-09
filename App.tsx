@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { Text, View } from "react-native";
-import { heading } from "./styles/typography";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import Stacks from "./src/navigation/Stacks";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -29,14 +30,11 @@ const App = () => {
 
   if (!loaded) return null;
   return (
-    <View>
-      <Text style={heading("bold").h1}>안녕하세요 ?</Text>
-      <Text style={heading("medium").h1}>안녕하세요 ?</Text>
-      <Text style={heading("bold").h1}>안녕하세요 ?</Text>
-      <Text style={heading("bold").h1}>안녕하세요 ?</Text>
-      <Text style={heading("bold").h1}>안녕하세요 ?</Text>
-      <Text style={heading("bold").h1}>안녕하세요 ?</Text>
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <Stacks />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 };
 
