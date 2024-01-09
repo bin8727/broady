@@ -2,13 +2,12 @@ import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 
 import { body } from "../../styles/typography";
-import color from "../../styles/color";
 
 type ButtonType = {
   size: "small" | "normal" | "large";
   type: "primary" | "secondary" | "disabled" | "state";
   background?: string;
-  textColor?: string;
+  color?: string;
   label: string;
   onPress?: () => void;
 };
@@ -17,7 +16,7 @@ const Button = ({
   size,
   type,
   background,
-  textColor,
+  color,
   label,
   onPress,
 }: ButtonType) => {
@@ -60,7 +59,7 @@ const Button = ({
         { backgroundColor: background },
       ]}
     >
-      <Text style={[body("medium").large, { color: textColor }]}>{label}</Text>
+      <Text style={[body("medium").large, { color: color }]}>{label}</Text>
     </TouchableOpacity>
   );
 };

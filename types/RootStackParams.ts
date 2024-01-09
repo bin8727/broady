@@ -3,4 +3,7 @@ export type RootStackParams = {
   AI: undefined;
   Save: undefined;
   My: undefined;
+
+  RoleSetting: undefined;
+  Nickname: undefined;
 };

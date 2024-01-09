@@ -19,5 +19,6 @@ export {
 };
 
 import Notification from "./notification";
+import ArrowLeft from "./arrow-left";
 
-export { Notification };
+export { Notification, ArrowLeft };

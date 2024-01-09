@@ -17,8 +17,8 @@ const My = () => {
           type={"primary"}
           label="첫 화면으로 나가기"
           background={color.primary}
-          onPress={() => navigate("Home")}
-          textColor={color.white}
+          onPress={() => navigate("RoleSetting")}
+          color={color.white}
         />
       </View>
 

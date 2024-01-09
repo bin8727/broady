@@ -15,7 +15,7 @@ const Home = () => {
           type={"primary"}
           label="채팅방 입장"
           background={color.primary}
-          textColor={color.white}
+          color={color.white}
         />
       </View>
 

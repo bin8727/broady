@@ -6,9 +6,35 @@ export type RootStackNavigationProps = StackNavigationProp<RootStackParams>;
 export type RootRouteNavigationProps = RouteProp<RootStackParams>;
 
 export const useAppNavigation = () => {
-  const { navigate, goBack } = useNavigation<RootStackNavigationProps>();
+  const {
+    navigate,
+    reset,
+    goBack,
+    setParams,
+    dispatch,
+    setOptions,
+    isFocused,
+    addListener,
+    replace,
+    push,
+    pop,
+    popToTop,
+  } = useNavigation<RootStackNavigationProps>();
 
-  return { navigate, goBack };
+  return {
+    navigate,
+    reset,
+    goBack,
+    setParams,
+    dispatch,
+    setOptions,
+    isFocused,
+    addListener,
+    replace,
+    push,
+    pop,
+    popToTop,
+  };
 };
 
 export const useAppRoute = () => {
