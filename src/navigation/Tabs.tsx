@@ -15,6 +15,7 @@ const Tabs = () => {
     <Tab.Navigator
       tabBar={(props) => <TabBar {...props} />}
       screenOptions={{ header: () => <TabHeader /> }}
+      initialRouteName="Home"
     >
       <Tab.Screen
         name="Home"

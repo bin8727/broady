@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 
-import SafeAreaInset from "./SafeAreaInset";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import color from "../../styles/color";
 import { body } from "../../styles/typography";
 import { Notification } from "../../assets/icons";
 
+import SafeAreaInset from "./SafeAreaInset";
+
 const TabHeader = () => {
+  const [nickname, setNickname] = useState<string | null>("");
+
+  useEffect(() => {
+    const getItem = async () => {
+      const result = await AsyncStorage.getItem("nickname");
+      setNickname(result);
+    };
+
+    getItem();
+  }, []);
+
   return (
     <>
       <SafeAreaInset inset={"top"} />
@@ -30,7 +44,7 @@ const TabHeader = () => {
                 { color: color.gray100, lineHeight: 26 },
               ]}
             >
-              반가워요, 유저! 👋🏻
+              반가워요, {nickname}! 👋🏻
             </Text>
             <Text
               style={{

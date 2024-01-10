@@ -1,9 +1,7 @@
 export type RootStackParams = {
-  Home: undefined;
-  AI: undefined;
-  Save: undefined;
-  My: undefined;
+  Tabs: undefined;
 
   RoleSetting: undefined;
   Nickname: undefined;
+  Chat: undefined;
 };
